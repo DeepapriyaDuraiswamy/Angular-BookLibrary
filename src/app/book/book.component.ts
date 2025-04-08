@@ -26,7 +26,7 @@ export class BookComponent {
     this.booksService.saveBook(this.book).subscribe(
       (data) => this.displayBook(data),
     (error) => {
-      console.error('Error saving book:', error);
+      console.error('Error saving book12:', error);
     });
   }
 
