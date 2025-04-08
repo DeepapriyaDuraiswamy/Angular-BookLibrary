@@ -1,0 +1,38 @@
+
+
+<div class = "book-page">
+ <div>
+    <label> Title: </label>
+    
+    <input type="text" [(ngModel)]="book.title">
+ </div> &nbsp;
+
+ <div>
+    <label> Category Id: </label>
+    
+    <input type="text" [(ngModel)]="book.catgeroyid">
+ </div> &nbsp;
+
+ <div>
+   <label> Publication Date: </label>
+
+   <input type="text" [(ngModel)]="book.publicationDate">
+ </div> &nbsp;
+
+ <div>
+   <label> Copies Owned: </label>
+
+   <input type="text" [(ngModel)]="book.copiedOwned">
+ </div> &nbsp;
+
+ <p></p>
+
+ <div>
+     <button (click)="saveBook()"> save </button> &nbsp;
+     <button> cancel</button>
+
+ </div>
+
+</div>
+
+
