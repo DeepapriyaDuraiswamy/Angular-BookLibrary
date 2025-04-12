@@ -13,26 +13,60 @@ import { FormsModule } from '@angular/forms';
 export class BookComponent {
 
   book : Book = new Book();
+  input : Book = new Book();
 
-  constructor(private booksService: BooksService) {
+  showForm : boolean = false;
 
-    
+  showBooksBrowse : boolean = false;
+
+  books : Book[] = [];
+
+  constructor(private booksService: BooksService) {   
 
     
   }
 
-  saveBook () {
+  getBookByTitle(event : any) {
 
+    console.log('Enter value is ' +event.target.value);
+    this.input.title = event.target.value;
+    this.input.categoryId = 0;
+    this.input.publicationDate = new Date();
+    this.input.copiesOwned = 0;
+
+    this.booksService.getBookByTitle(this.input).subscribe((data) => this.books = data);
+  }
+
+  saveBook() {
     this.booksService.saveBook(this.book).subscribe(
-      (data) => this.displayBook(data),
-    (error) => {
-      console.error('Error saving book12:', error);
-    });
+      (data) => {
+        console.log('Book saved successfully:', data);
+        
+        this.resetForm();
+        this.showForm = false;
+      },
+      (error) => {
+        console.error('Error saving book:', error);
+      }
+    );
   }
+  
 
   displayBook (res : Book) {
 
     this.book = res;
   }
+
+  resetForm() {
+    this.book = new Book();
+  }
+
+  cancel() {
+    
+    this.resetForm();
+    this.showForm = false;
+  }
+
+  
 
 }

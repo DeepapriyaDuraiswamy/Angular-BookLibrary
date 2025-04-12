@@ -1,0 +1,41 @@
+.updateuser-btn {
+    background-color: white;
+    color: #007bff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+
+.updateuser-page
+{
+ display:flex;
+ flex-direction:column;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.save-btn, .cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}

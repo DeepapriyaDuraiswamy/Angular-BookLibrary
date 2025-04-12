@@ -1,38 +1,57 @@
+<!-- Buttons -->
+<div class="button-group">
+  <button class="manage-btn" (click)="showForm = !showForm; showBooksBrowse = false">
+    📚 Manage Books
+  </button>
+  <button class="manage-btn" (click)="showBooksBrowse = !showBooksBrowse; showForm = false">
+    📚 Browse Books
+  </button>
+</div>
 
+<!-- Browse Books -->
 
-<div class = "book-page">
- <div>
-    <label> Title: </label>
-    
-    <input type="text" [(ngModel)]="book.title">
- </div> &nbsp;
+  
+<div *ngIf="showBooksBrowse && !showForm">
+  <input type="text" (keydown.enter)="getBookByTitle($event)" placeholder="Search by title..." />
+  <p></p>
 
- <div>
-    <label> Category Id: </label>
-    
-    <input type="text" [(ngModel)]="book.catgeroyid">
- </div> &nbsp;
-
- <div>
-   <label> Publication Date: </label>
-
-   <input type="date" [(ngModel)]="book.publicationDate">
- </div> &nbsp;
-
- <div>
-   <label> Copies Owned: </label>
-
-   <input type="text" [(ngModel)]="book.copiedOwned">
- </div> &nbsp;
-
- <p></p>
-
- <div>
-     <button (click)="saveBook()"> save </button> &nbsp;
-     <button> cancel</button>
-
- </div>
-
+  <table class="book-table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Category Id</th>
+        <th>Publication Date</th>
+        <th>Copies Owned</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bk of books">
+        <td>{{ bk.title }}</td>
+        <td>{{ bk.categoryId }}</td>
+        <td>{{ bk.publicationDate }}</td>
+        <td>{{ bk.copiesOwned }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 
+<!-- Manage Book Form -->
+<div *ngIf="showForm && !showBooksBrowse" class="book-page">
+  <label>Title:</label>
+  <input type="text" [(ngModel)]="book.title">
+
+  <label>Category Id:</label>
+  <input type="text" [(ngModel)]="book.categoryId">
+
+  <label>Publication Date:</label>
+  <input type="date" [(ngModel)]="book.publicationDate">
+
+  <label>Copies Owned:</label>
+  <input type="text" [(ngModel)]="book.copiesOwned">
+
+  <div class="form-buttons">
+    <button class="save-btn" (click)="saveBook()">Save</button>
+    <button class="cancel-btn" (click)="cancel()">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+.header-container {
+    background: linear-gradient(to right, #007BFF, #00BFFF);
+    color: black;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-bottom: 4px solid #0056b3;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .header-container h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+  
+
+  .form-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+  }
+  
+  app-user,
+  app-book,
+  app-add-user,
+  app-update-user {
+    background-color: #e0f0ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  
+ 

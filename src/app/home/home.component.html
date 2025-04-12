@@ -1,18 +1,15 @@
-<p>home works!</p>
-
-<h1> Count: {{count}}</h1>
-<button (click)="increment()">+</button>
-
-<!--<div *ngFor="let item of res">
-    <div>{{item.uid}} </div>
-    <div>{{item.name}} </div>
+<div class="header-container">
+    <h1>Library Management System</h1>
+   
 </div>
 
--->
 
 
-<app-book>
 
-
+<div class="form-container">
+    <app-user></app-user>
     
-</app-book>
+    <app-book></app-book>
+    <app-add-user></app-add-user>
+    <app-update-user></app-update-user>
+</div>
