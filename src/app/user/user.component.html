@@ -1,0 +1,29 @@
+<button class="manage-btn" (click)="showMemberForm = !showMemberForm">👥 Manage Members</button> &nbsp;
+<button class = "search-btn" *ngIf="showMemberForm" (click)="fetchAllUsers()">🔍 Search</button>
+
+<div *ngIf="showMemberForm" class="member-page">
+  <div>
+    <label> First Name: </label>
+    <input type="text" [(ngModel)]="user.firstName" readonly />
+  </div> &nbsp;
+
+  <div>
+    <label> Last Name: </label>
+    <input type="text" [(ngModel)]="user.lastName" readonly />
+  </div> &nbsp;
+
+  <div>
+    <label> Joined Date: </label>
+    <input type="date" [(ngModel)]="user.joinedDate" readonly />
+  </div> &nbsp;
+
+  <div>
+    <label> Active Status ID: </label>
+    <input type="text" [(ngModel)]="user.activeStatusId" readonly />
+  </div> &nbsp;
+
+  <div class = "form-buttons">
+    <button class = "prev-btn" (click)="prevMember()" [disabled]="currentIndex === 0">Previous</button> &nbsp;
+    <button class = "next-btn" (click)="nextMember()" [disabled]="currentIndex === members.length - 1">Next</button>
+  </div>
+</div>

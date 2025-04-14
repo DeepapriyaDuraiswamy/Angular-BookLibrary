@@ -1,0 +1,44 @@
+<button class="adduser-btn" (click)="addUserForm = !addUserForm">
+    ➕👥 Add User
+</button>
+
+<div  *ngIf="addUserForm" class="adduser-page">
+    <div>      
+      <label> First Name: </label>
+       
+       <input type="text" [(ngModel)]="add.firstName">
+    </div> &nbsp;
+   
+    <div>
+       <label> Last Name: </label>
+       
+       <input type="text" [(ngModel)]="add.lastName">
+    </div> &nbsp;
+   
+    <div>
+      <label> Joined Date: </label>
+   
+      <input type="date" [(ngModel)]="add.joinedDate">
+    </div> &nbsp;
+   
+    <div>
+      <label> Active Status ID: </label>
+   
+      <input type="text" [(ngModel)]="add.activeStatusId">
+    </div> &nbsp;
+   
+    <p></p>
+   
+       
+    <div class="form-buttons">
+      <button class="save-btn" (click)="addUser()">Save</button>
+      <button class="cancel-btn" (click)="cancel()">Cancel</button>
+    </div>
+   
+   </div>
+
+ 
+   
+   
+   
+

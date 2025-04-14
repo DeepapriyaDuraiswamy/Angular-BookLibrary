@@ -1,9 +1,9 @@
 export class Book {
 
     title !: string;
-    catgeroyid !: number;
+    categoryId !: number;
     publicationDate !: Date;
-    copiedOwned !: number;
+    copiesOwned !: number;
     
 
 }

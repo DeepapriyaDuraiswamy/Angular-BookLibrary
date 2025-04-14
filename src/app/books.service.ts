@@ -13,7 +13,9 @@ export class BooksService {
   
     apiUrl : string = 'http://localhost:8080/api';
      
-  
+    getBookByTitle(book:Book) : Observable<Book[]> {
+      return this.http.post<Book[]>(`${this.apiUrl}/books`, book);
+    }
   
       
     saveBook(book:Book): Observable<Book> {
