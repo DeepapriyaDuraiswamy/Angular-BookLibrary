@@ -65,6 +65,8 @@ export class BookComponent {
     
     this.resetForm();
     this.showForm = false;
+
+    console.log('calling cancel');
   }
 
   
